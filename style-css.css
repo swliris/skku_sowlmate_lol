@@ -1,0 +1,438 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Container */
+.container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 50%, #4338ca 100%);
+    padding: 1rem;
+    position: relative;
+}
+
+/* Background Effects */
+.bg-effects {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.bg-circle {
+    position: absolute;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    opacity: 0.2;
+    filter: blur(3rem);
+}
+
+.bg-circle-1 {
+    background: #3b82f6;
+    top: -10rem;
+    right: -10rem;
+    animation: pulse 4s ease-in-out infinite;
+}
+
+.bg-circle-2 {
+    background: #8b5cf6;
+    bottom: -10rem;
+    left: -10rem;
+    animation: pulse 4s ease-in-out infinite 1s;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.2; }
+    50% { transform: scale(1.1); opacity: 0.3; }
+}
+
+/* Content */
+.content {
+    position: relative;
+    max-width: 64rem;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.header-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.header-icon {
+    padding: 0.75rem;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.header-icon i {
+    width: 2rem;
+    height: 2rem;
+    color: white;
+}
+
+.header-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #60a5fa, #a78bfa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.header-subtitle {
+    color: #bfdbfe;
+    font-size: 1.125rem;
+}
+
+/* Team Members */
+.team-members {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.member-card {
+    background: rgba(31, 41, 55, 0.8);
+    backdrop-filter: blur(8px);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    border: 1px solid rgba(55, 65, 81, 0.5);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.member-card:hover {
+    border-color: rgba(59, 130, 246, 0.5);
+    transform: translateY(-2px);
+}
+
+.member-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.member-position {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.position-icon {
+    font-size: 1.5rem;
+}
+
+.position-info h3 {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: white;
+}
+
+.position-info .position-label {
+    font-size: 0.75rem;
+    color: #93c5fd;
+}
+
+.rank-select {
+    flex: 1;
+    min-width: 0;
+}
+
+.rank-select select {
+    width: 100%;
+    background: rgba(55, 65, 81, 0.8);
+    border: 1px solid #4b5563;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    color: white;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+}
+
+.rank-select select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.rank-select option {
+    background: #374151;
+    color: white;
+}
+
+.score-display {
+    text-align: right;
+    min-width: fit-content;
+}
+
+.score-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.5rem;
+    color: white;
+    font-weight: bold;
+    font-size: 0.875rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.score-badge.empty {
+    background: #4b5563;
+    color: #9ca3af;
+}
+
+/* Rank Colors */
+.rank-challenger { background: linear-gradient(135deg, #fbbf24, #f59e0b); }
+.rank-diamond { background: linear-gradient(135deg, #22d3ee, #2563eb); }
+.rank-emerald { background: linear-gradient(135deg, #10b981, #059669); }
+.rank-platinum { background: linear-gradient(135deg, #14b8a6, #0891b2); }
+.rank-gold { background: linear-gradient(135deg, #fcd34d, #f59e0b); }
+.rank-silver { background: linear-gradient(135deg, #d1d5db, #6b7280); }
+.rank-bronze { background: linear-gradient(135deg, #d97706, #ea580c); }
+
+/* Total Score */
+.total-score-container {
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.8), rgba(59, 130, 246, 0.8));
+    backdrop-filter: blur(8px);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(147, 51, 234, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.total-score-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.total-score-header i {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #c084fc;
+}
+
+.total-score-header h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.total-score-content {
+    text-align: center;
+}
+
+.total-score-display {
+    font-size: 3rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #fbbf24, #f97316);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.75rem;
+    animation: pulse-score 2s ease-in-out infinite;
+}
+
+@keyframes pulse-score {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.total-score-label {
+    font-size: 1.125rem;
+    color: #c084fc;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+/* Team Status */
+.team-status {
+    margin-bottom: 1rem;
+}
+
+.status-card {
+    border-radius: 0.75rem;
+    padding: 1rem;
+    border: 1px solid;
+}
+
+.status-card.possible {
+    background: rgba(34, 197, 94, 0.2);
+    border-color: rgba(34, 197, 94, 0.5);
+}
+
+.status-card.impossible {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: rgba(239, 68, 68, 0.5);
+}
+
+.status-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.status-indicator {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    animation: pulse 1s ease-in-out infinite;
+}
+
+.status-indicator.green {
+    background: #22c55e;
+}
+
+.status-indicator.red {
+    background: #ef4444;
+}
+
+.status-title {
+    font-size: 1.125rem;
+    font-weight: bold;
+}
+
+.status-title.green {
+    color: #4ade80;
+}
+
+.status-title.red {
+    color: #f87171;
+}
+
+.status-message {
+    font-size: 0.875rem;
+}
+
+.status-message.green {
+    color: #86efac;
+}
+
+.status-message.red {
+    color: #fca5a5;
+}
+
+/* Score Breakdown */
+.score-breakdown {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+    font-size: 0.75rem;
+}
+
+.breakdown-item {
+    text-align: center;
+}
+
+.breakdown-label {
+    color: #d1d5db;
+    margin-bottom: 0.25rem;
+}
+
+.breakdown-score {
+    font-weight: bold;
+    color: white;
+}
+
+/* Instructions */
+.instructions {
+    margin-top: 1.5rem;
+    background: rgba(31, 41, 55, 0.6);
+    backdrop-filter: blur(8px);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    border: 1px solid rgba(55, 65, 81, 0.5);
+}
+
+.instructions-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.instructions-header i {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #60a5fa;
+}
+
+.instructions-header h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: white;
+}
+
+.instructions-content {
+    color: #d1d5db;
+    font-size: 0.875rem;
+}
+
+.instructions-content p {
+    margin-bottom: 0.25rem;
+}
+
+.highlight-green {
+    color: #4ade80;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .container {
+        padding: 2rem;
+    }
+    
+    .header-title {
+        font-size: 3rem;
+    }
+    
+    .total-score-display {
+        font-size: 4rem;
+    }
+    
+    .instructions {
+        padding: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .member-content {
+        gap: 1.5rem;
+    }
+    
+    .total-score-container {
+        padding: 2rem;
+    }
+}
+
+/* Utilities */
+.hidden {
+    display: none !important;
+}
