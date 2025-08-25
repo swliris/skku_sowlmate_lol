@@ -126,7 +126,7 @@ function updateDisplay() {
         // 모든 멤버가 선택된 경우에만 상태 표시
         teamStatus.style.display = 'block';
         
-        const isPossible = totalScore <= 100;
+        const isPossible = totalScore <= 110;
         teamStatus.innerHTML = `
             <div class="status-card ${isPossible ? 'possible' : 'impossible'}">
                 <div class="status-header">
@@ -137,8 +137,8 @@ function updateDisplay() {
                 </div>
                 <p class="status-message ${isPossible ? 'green' : 'red'}">
                     ${isPossible 
-                        ? '총점이 100점 이하로 균형잡힌 팀입니다!' 
-                        : `총점이 100점을 초과했습니다. (${(totalScore - 100).toFixed(1)}점 초과)`
+                        ? '총점이 110점 이하로 균형잡힌 팀입니다!' 
+                        : `총점이 110점을 초과했습니다. (${(totalScore - 110).toFixed(1)}점 초과)`
                     }
                 </p>
             </div>
